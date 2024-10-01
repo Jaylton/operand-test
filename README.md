@@ -41,7 +41,7 @@ npm install
 
 3 - Obtenha as credenciais
 
-- Acesse o seguinte link(https://drive.google.com/drive/folders/1fbfOqyqDosSvsOcjYcnNE7K7Ivdzt2-R?usp=sharing) e baixe os arquivos .env para o frontend e firebase-service-account.json para o backend
+- Acesse o seguinte [link](https://drive.google.com/drive/folders/1fbfOqyqDosSvsOcjYcnNE7K7Ivdzt2-R?usp=sharing) e baixe os arquivos .env para o frontend e firebase-service-account.json para o backend
 
 ### 3. Executar o Projeto:
 ````
@@ -52,3 +52,9 @@ node index.js
 cd frontend
 npm run serve
 ````
+
+---
+
+### Documentação do projeto
+
+ [Link](https://docs.google.com/document/d/1tITAk3X8lEUu2lZ0Lbpp1WyJibynHlgc_JvVtkBoCak)
