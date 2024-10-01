@@ -1,25 +1,28 @@
 import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
 
-// Suas credenciais do Firebase
+// Credenciais do Firebase
 const firebaseConfig = {
-  apiKey: "AIzaSyDUO22rLCLHtBTIpj7KX7201x_Qx51WhW4",
-  authDomain: "test-task-a9a26.firebaseapp.com",
-  projectId: "test-task-a9a26",
-  storageBucket: "test-task-a9a26.appspot.com",
-  messagingSenderId: "647337540829",
-  appId: "1:647337540829:web:b5f0cdd2d2415ac1c42f34"
+	apiKey: process.env.VUE_APP_FIREBASE_API_KEY,
+	authDomain: process.env.VUE_APP_FIREBASE_AUTH_DOMAIN,
+	projectId: process.env.VUE_APP_FIREBASE_PROJECT_ID,
+	storageBucket: process.env.VUE_APP_FIREBASE_STORAGE_BUCKET,
+	messagingSenderId: process.env.VUE_APP_FIREBASE_MESSAGING_SENDER_ID,
+	appId: process.env.VUE_APP_FIREBASE_APP_ID,
 }
 
 const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
 
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail } from "firebase/auth";
 
 export const auth = getAuth();
 export function signUp(email, password) {
-    return createUserWithEmailAndPassword(auth, email, password)
+	return createUserWithEmailAndPassword(auth, email, password)
 }
 export function signIn(email, password) {
-    return signInWithEmailAndPassword(auth, email, password);
+	return signInWithEmailAndPassword(auth, email, password);
+}
+export function passwordResetEmail(email) {
+	return sendPasswordResetEmail(auth, email);
 }
